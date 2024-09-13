@@ -78,6 +78,44 @@ struct AddMeeting: View {
                     Divider()
                 }
                 .padding(.top, 10)
+
+                VStack(alignment: .leading, spacing: 15) {
+                    Text("Select Collaborators")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.gray)
+
+                    HStack(spacing: -10) {
+                        ForEach(1...3, id: \.self) { index in
+                            Image("user\(index)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                                .padding(4)
+                                .background(.white, in: Circle())
+                                .background(
+                                    Circle()
+                                        .stroke(.black, lineWidth: 1)
+                                )
+                        }
+
+                        Spacer(minLength: 10)
+
+                        Button {
+
+                        } label: {
+                            Text("Contacts")
+                                .font(.caption)
+                                .foregroundStyle(.black)
+                                .padding(.vertical, 10)
+                                .padding(.horizontal, 20)
+                                .background(
+                                    Capsule().stroke(.black, lineWidth: 1)
+                                )
+                        }
+                    }
+                    Divider()
+                }
+                .padding(.top, 10)
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
