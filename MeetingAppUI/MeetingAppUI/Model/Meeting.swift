@@ -15,3 +15,10 @@ struct Meeting: Identifiable {
     var turnedOn: Bool = true
     var memberType: String = "Public"
 }
+
+extension Meeting {
+    static let mockModels: [Meeting] = [
+        .init(title: "Mouse issue", timing: Date()),
+        .init(title: "Bug fixing", timing: Date())
+    ]
+}

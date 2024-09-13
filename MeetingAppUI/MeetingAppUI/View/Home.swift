@@ -12,7 +12,8 @@ struct Home: View {
     @Namespace var animationID
     @State var currentTab = "Upcoming"
     let tabs = ["Upcoming", "On Hold", "Post", "Cancelled"]
-
+    @StateObject private var viewModel = HomeViewModel()
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 15) {
@@ -51,6 +52,12 @@ struct Home: View {
                     }
                 }
                 .padding(.top, 25)
+
+                VStack(spacing: 15) {
+                    ForEach(viewModel.meetings) { meeting in
+
+                    }
+                }
             }
             .padding()
         }

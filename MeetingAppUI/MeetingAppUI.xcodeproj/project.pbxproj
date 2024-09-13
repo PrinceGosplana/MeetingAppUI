@@ -14,6 +14,7 @@
 		8A27C9F92C917CB700DFAFE1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27C9F82C917CB700DFAFE1 /* Home.swift */; };
 		8ADDED252C942FE7002C42C6 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED242C942FE7002C42C6 /* TabButton.swift */; };
 		8ADDED282C9441CD002C42C6 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED272C9441CD002C42C6 /* Meeting.swift */; };
+		8ADDED2B2C94428C002C42C6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED2A2C94428C002C42C6 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8A27C9F82C917CB700DFAFE1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		8ADDED242C942FE7002C42C6 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		8ADDED272C9441CD002C42C6 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
+		8ADDED2A2C94428C002C42C6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		8A27C9F62C917CA800DFAFE1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8ADDED2A2C94428C002C42C6 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ADDED282C9441CD002C42C6 /* Meeting.swift in Sources */,
+				8ADDED2B2C94428C002C42C6 /* HomeViewModel.swift in Sources */,
 				8A27C9EB2C917AD600DFAFE1 /* ContentView.swift in Sources */,
 				8ADDED252C942FE7002C42C6 /* TabButton.swift in Sources */,
 				8A27C9F92C917CB700DFAFE1 /* Home.swift in Sources */,
