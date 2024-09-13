@@ -11,9 +11,10 @@ struct Meeting: Identifiable {
     let id = UUID().uuidString
     let title: String
     let timing: Date
-    var cardColor: Color = Color(.blue)
+    var cardColor: Color = Color("Blue")
     var turnedOn: Bool = true
     var memberType: String = "Public"
+    var members: [String] = Array(repeating: "", count: 10)
 }
 
 extension Meeting {

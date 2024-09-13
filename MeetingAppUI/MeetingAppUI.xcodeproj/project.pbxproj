@@ -15,6 +15,7 @@
 		8ADDED252C942FE7002C42C6 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED242C942FE7002C42C6 /* TabButton.swift */; };
 		8ADDED282C9441CD002C42C6 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED272C9441CD002C42C6 /* Meeting.swift */; };
 		8ADDED2B2C94428C002C42C6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED2A2C94428C002C42C6 /* HomeViewModel.swift */; };
+		8ADDED2D2C94462E002C42C6 /* MeetingCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED2C2C94462E002C42C6 /* MeetingCardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8ADDED242C942FE7002C42C6 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		8ADDED272C9441CD002C42C6 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		8ADDED2A2C94428C002C42C6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8ADDED2C2C94462E002C42C6 /* MeetingCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				8A27C9F82C917CB700DFAFE1 /* Home.swift */,
 				8A27C9EA2C917AD600DFAFE1 /* ContentView.swift */,
 				8ADDED242C942FE7002C42C6 /* TabButton.swift */,
+				8ADDED2C2C94462E002C42C6 /* MeetingCardCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				8A27C9EB2C917AD600DFAFE1 /* ContentView.swift in Sources */,
 				8ADDED252C942FE7002C42C6 /* TabButton.swift in Sources */,
 				8A27C9F92C917CB700DFAFE1 /* Home.swift in Sources */,
+				8ADDED2D2C94462E002C42C6 /* MeetingCardCell.swift in Sources */,
 				8A27C9E92C917AD600DFAFE1 /* MeetingAppUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -54,8 +54,8 @@ struct Home: View {
                 .padding(.top, 25)
 
                 VStack(spacing: 15) {
-                    ForEach(viewModel.meetings) { meeting in
-
+                    ForEach($viewModel.meetings) { $meeting in
+                        MeetingCardCell(meeting: $meeting)
                     }
                 }
             }
