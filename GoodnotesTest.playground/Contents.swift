@@ -71,35 +71,39 @@ limit_per_second: 1
 
 
 func getRejectedRequests(array: [String], limitPerSecond: Int32) -> [Int32] {
-    var rejectedIds = [Int32]()
-    let timeOffset = 1000
+    let timeOffset: Int32 = 1000
     var countAdded: Int32 = limitPerSecond
     var passedIds = [String: (String, Int32)]()
+    var rejectedIds = [Int32]()
 
     for item in array {
         let request = item.components(separatedBy: " ")
         let newId = request[0]
         let newIp = request[1]
         let newTimeStamp = request[2]
+        let passedIpAndTime = passedIds[newIp]
 
-        print("id \(newId) ip \(newIp) timeStamp \(newTimeStamp)")
+        if let passedIpAndTime {
+            let timeValue1 = Int32(newTimeStamp)
 
-        let checkedIpAndTime = passedIds[newIp]
-
-        if let checkedIpAndTime {
-//            print("checkedIpAndTime \(checkedIpAndTime) newId \(newId)")
-
-            if let timeValue1 = Int32(newTimeStamp), (timeValue1 - Int32(checkedIpAndTime.1)) < timeOffset {
-                countAdded -= 1
-                rejectedIds.append(Int32(newId) ?? 0)
+            if let timeValue1, (timeValue1 - Int32(passedIpAndTime.1)) >= timeOffset {
+                let incremented = countAdded + 1
+                countAdded = min(incremented, limitPerSecond)
+                passedIds[newIp] = (newId, Int32(newTimeStamp) ?? 0)
             }
-
+            if countAdded > 0 {
+                countAdded -= 1
+            } else if let timeValue1, (timeValue1 - Int32(passedIpAndTime.1)) < timeOffset   {
+                rejectedIds.append(Int32(newId) ?? 0)
+            } else {
+                countAdded -= 1
+            }
         } else {
+            countAdded -= 1
             passedIds[newIp] = (newId, Int32(newTimeStamp) ?? 0)
         }
     }
-    print("passedIds \(passedIds)")
-    return rejectedIds
+    return rejectedIds.sorted()
 }
 
 /// Tests
@@ -107,19 +111,16 @@ let exampleArray1 = ["1 172.253.115.138 50000", "2 172.253.115.139 50100", "3 17
 let limit_per_second1: Int32 = 1
 let array1 = getRejectedRequests(array: exampleArray1, limitPerSecond: limit_per_second1) // [3, 4]
 let res1 = array1 == [3, 4] ? "passed" : "failed"
-print("Test 1 reject \(array1)")
 print("Test 1 \(res1)")
 
 let exampleArray2 = ["10 172.253.115.138 50000", "20 172.253.115.138 50000", "30 172.253.115.138 50000"]
 let limit_per_second2: Int32 = 2
 let array2 = getRejectedRequests(array: exampleArray2, limitPerSecond: limit_per_second2) // [30]
 let res2 = array2 == [30] ? "passed" : "failed"
-print("Test2 rejected \(array2)")
 print("Test 2 \(res2)")
 
-//let exampleArray3 = ["1 172.253.115.138 50000", "2 172.253.115.138 50900", "3 172.253.115.138 51000", "4 172.253.115.138 51500"]
-//let limit_per_second3: Int32 = 2
-//let array3 = getRejectedRequests(array: exampleArray3, limitPerSecond: limit_per_second3) // [4]
-//let res3 = array3 == [4] ? "passed" : "failed"
-//print("Test3 rejected \(array3)")
-//print("Test 3 \(res3)")
+let exampleArray3 = ["1 172.253.115.138 50000", "2 172.253.115.138 50900", "3 172.253.115.138 51000", "4 172.253.115.138 51500"]
+let limit_per_second3: Int32 = 2
+let array3 = getRejectedRequests(array: exampleArray3, limitPerSecond: limit_per_second3) // [4]
+let res3 = array3 == [4] ? "passed" : "failed"
+print("Test 3 \(res3)")
