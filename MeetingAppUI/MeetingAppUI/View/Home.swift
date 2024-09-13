@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct Home: View {
+
+    @Namespace var animationID
+    @State var currentTab = "Upcoming"
+    let tabs = ["Upcoming", "On Hold", "Post", "Cancelled"]
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 15) {
@@ -41,7 +46,9 @@ struct Home: View {
 
                 /// Custom segment tab view
                 HStack(spacing: 8) {
-                    
+                    ForEach(tabs, id:\.self) {
+                        TabButton(currentTab: $currentTab, title: $0, animationID: animationID)
+                    }
                 }
             }
             .padding()
