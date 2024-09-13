@@ -8,5 +8,6 @@
 import SwiftUI
 
 final class HomeViewModel: ObservableObject {
+    @Published var addNewMeeting = false
     @Published var meetings: [Meeting] = Meeting.mockModels
 }

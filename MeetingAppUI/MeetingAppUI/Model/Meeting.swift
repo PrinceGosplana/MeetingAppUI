@@ -9,12 +9,21 @@ import SwiftUI
 
 struct Meeting: Identifiable {
     let id = UUID().uuidString
-    let title: String
-    let timing: Date
+    var title: String
+    var timing: Date
     var cardColor: Color = Color("Blue")
     var turnedOn: Bool = true
     var memberType: String = "Public"
     var members: [String] = Array(repeating: "", count: 10)
+
+    var meetingTime: String {
+        timing.formatted(date: .omitted, time: .shortened)
+    }
+
+    var meetingDate: String {
+        timing
+            .formatted(date: .abbreviated, time: .omitted)
+    }
 }
 
 extension Meeting {

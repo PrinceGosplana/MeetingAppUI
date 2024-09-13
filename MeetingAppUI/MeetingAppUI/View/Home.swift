@@ -31,7 +31,9 @@ struct Home: View {
                         .padding(.top)
 
                     Button {
-
+                        withAnimation {
+                            viewModel.addNewMeeting.toggle()
+                        }
                     } label: {
                         Text("ADD")
                             .foregroundStyle(.black)
@@ -63,6 +65,7 @@ struct Home: View {
         }
         .background(Color.bg)
         .ignoresSafeArea()
+        .overlay(AddMeeting().environmentObject(viewModel))
     }
 }
 
