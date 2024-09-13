@@ -11,6 +11,7 @@ struct AddMeeting: View {
     
     @EnvironmentObject var homeModel: HomeViewModel
     @State private var currentMeetingData = Meeting(title: "", timing: Date())
+    @State private var showDatePicker = false
 
     var body: some View {
         if !homeModel.addNewMeeting {
@@ -58,6 +59,20 @@ struct AddMeeting: View {
                     HStack {
                         Text("\(currentMeetingData.meetingTime), \(currentMeetingData.meetingDate)")
                             .fontWeight(.bold)
+
+                        Spacer(minLength: 10)
+
+                        /// Custom Date Picker
+                        Button {
+                            withAnimation {
+                                showDatePicker.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "calendar")
+                                .foregroundStyle(.black)
+                                .padding(6)
+                                .background(.yellow, in: Circle())
+                        }
                     }
 
                     Divider()
@@ -67,6 +82,7 @@ struct AddMeeting: View {
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .background(Color.bg)
+            .overlay(CustomDatePicker(date: $currentMeetingData.timing, showPicker: $showDatePicker))
         }
     }
 }
