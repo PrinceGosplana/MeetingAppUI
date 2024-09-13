@@ -50,6 +50,7 @@ struct Home: View {
                         TabButton(currentTab: $currentTab, title: $0, animationID: animationID)
                     }
                 }
+                .padding(.top, 25)
             }
             .padding()
         }
