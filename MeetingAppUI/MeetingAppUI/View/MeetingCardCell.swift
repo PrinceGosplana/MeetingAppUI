@@ -43,6 +43,7 @@ struct MeetingCardCell: View {
                     }
                 }
             }
+            .foregroundStyle(getColor())
 
             HStack(spacing: 0) {
                 ForEach(1...3, id: \.self) { index in
@@ -76,6 +77,13 @@ struct MeetingCardCell: View {
         }
         .padding()
         .background(meeting.cardColor, in: RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func getColor() -> Color {
+        if meeting.cardColor == Color("Purple") || meeting.cardColor == Color("Red") {
+            return .white
+        }
+        return .black
     }
 }
 

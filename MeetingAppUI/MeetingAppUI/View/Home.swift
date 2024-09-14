@@ -10,8 +10,6 @@ import SwiftUI
 struct Home: View {
 
     @Namespace var animationID
-    @State var currentTab = "Upcoming"
-    let tabs = ["Upcoming", "On Hold", "Post", "Cancelled"]
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
@@ -49,12 +47,23 @@ struct Home: View {
 
                 /// Custom segment tab view
                 HStack(spacing: 8) {
-                    ForEach(tabs, id:\.self) {
-                        TabButton(currentTab: $currentTab, title: $0, animationID: animationID)
+                    ForEach(viewModel.tabs, id:\.self) {
+                        TabButton(currentTab: $viewModel.currentTab, title: $0, animationID: animationID)
                     }
                 }
                 .padding(.top, 25)
 
+                if viewModel.meetings.isEmpty {
+                    Image(.notes)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 150, height: 150)
+                        .padding(.top, 30)
+
+                    Text("Add **Meeting**")
+                        .font(.title2)
+                        .padding(.top)
+                }
                 VStack(spacing: 15) {
                     ForEach($viewModel.meetings) { $meeting in
                         MeetingCardCell(meeting: $meeting)
@@ -65,7 +74,13 @@ struct Home: View {
         }
         .background(Color.bg)
         .ignoresSafeArea()
-        .overlay(AddMeeting().environmentObject(viewModel))
+        .overlay(
+            ZStack {
+                if viewModel.addNewMeeting {
+                    AddMeeting().environmentObject(viewModel)
+                }
+            }
+        )
     }
 }
 

@@ -12,6 +12,7 @@
 		8A27C9ED2C917AD900DFAFE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A27C9EC2C917AD900DFAFE1 /* Assets.xcassets */; };
 		8A27C9F02C917AD900DFAFE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A27C9EF2C917AD900DFAFE1 /* Preview Assets.xcassets */; };
 		8A27C9F92C917CB700DFAFE1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27C9F82C917CB700DFAFE1 /* Home.swift */; };
+		8A6E04402C95681800E13B88 /* MeetingTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6E043F2C95681800E13B88 /* MeetingTabButton.swift */; };
 		8ADDED252C942FE7002C42C6 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED242C942FE7002C42C6 /* TabButton.swift */; };
 		8ADDED282C9441CD002C42C6 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED272C9441CD002C42C6 /* Meeting.swift */; };
 		8ADDED2B2C94428C002C42C6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDED2A2C94428C002C42C6 /* HomeViewModel.swift */; };
@@ -27,6 +28,7 @@
 		8A27C9EC2C917AD900DFAFE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A27C9EF2C917AD900DFAFE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A27C9F82C917CB700DFAFE1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		8A6E043F2C95681800E13B88 /* MeetingTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTabButton.swift; sourceTree = "<group>"; };
 		8ADDED242C942FE7002C42C6 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		8ADDED272C9441CD002C42C6 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		8ADDED2A2C94428C002C42C6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8ADDED312C94851F002C42C6 /* CustomDatePicker.swift */,
+				8A6E043F2C95681800E13B88 /* MeetingTabButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				8A27C9EB2C917AD600DFAFE1 /* ContentView.swift in Sources */,
 				8ADDED252C942FE7002C42C6 /* TabButton.swift in Sources */,
 				8A27C9F92C917CB700DFAFE1 /* Home.swift in Sources */,
+				8A6E04402C95681800E13B88 /* MeetingTabButton.swift in Sources */,
 				8ADDED2F2C947A59002C42C6 /* AddMeeting.swift in Sources */,
 				8ADDED2D2C94462E002C42C6 /* MeetingCardCell.swift in Sources */,
 				8A27C9E92C917AD600DFAFE1 /* MeetingAppUIApp.swift in Sources */,
